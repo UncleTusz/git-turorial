@@ -9,6 +9,26 @@
       --rose-dust: #9e7b6e;
       --line: rgba(196, 162, 101, 0.22);
       --line-strong: rgba(196, 162, 101, 0.45);
+      --service-bridal: #e8d4c4;
+      --service-bridal-hover: #f3e4d8;
+      --service-bridal-text: #2a1810;
+      --service-bridal-overlay: rgba(38, 22, 18, 0.82);
+      --service-bridal-accent: #d4a88a;
+      --service-event: #6b2238;
+      --service-event-hover: #842945;
+      --service-event-text: #f9f0e8;
+      --service-event-overlay: rgba(28, 6, 16, 0.88);
+      --service-event-accent: #c4a265;
+      --service-editorial: #f0ece4;
+      --service-editorial-hover: #faf8f4;
+      --service-editorial-text: #0a0908;
+      --service-editorial-overlay: rgba(6, 6, 6, 0.86);
+      --service-editorial-accent: #f0ece4;
+      --service-private: #a88668;
+      --service-private-hover: #b89472;
+      --service-private-text: #140f0c;
+      --service-private-overlay: rgba(18, 14, 10, 0.84);
+      --service-private-accent: #c9a265;
       --font-display: "Bodoni Moda", "Noto Serif SC", serif;
       --font-brand: "Italiana", "Bodoni Moda", serif;
       --font-body: "Noto Serif SC", "Bodoni Moda", serif;
@@ -569,10 +589,88 @@
       min-width: 11rem;
       justify-content: center;
       text-decoration: none;
+      border: 1px solid transparent;
+      transition: background 0.4s var(--ease-out), color 0.4s, border-color 0.4s, transform 0.4s var(--ease-out);
     }
 
-    .service-card__btn.btn--primary:hover {
+    .btn--service-bridal {
+      background: var(--service-bridal);
+      color: var(--service-bridal-text);
+      border-color: rgba(212, 168, 138, 0.45);
+    }
+
+    .btn--service-bridal:hover {
+      background: var(--service-bridal-hover);
       transform: translateY(-2px);
+    }
+
+    .btn--service-event {
+      background: var(--service-event);
+      color: var(--service-event-text);
+      border-color: rgba(196, 162, 101, 0.4);
+    }
+
+    .btn--service-event:hover {
+      background: var(--service-event-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn--service-editorial {
+      background: var(--service-editorial);
+      color: var(--service-editorial-text);
+      border-color: rgba(240, 236, 228, 0.25);
+    }
+
+    .btn--service-editorial:hover {
+      background: var(--service-editorial-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn--service-private {
+      background: var(--service-private);
+      color: var(--service-private-text);
+      border-color: rgba(201, 162, 101, 0.35);
+    }
+
+    .btn--service-private:hover {
+      background: var(--service-private-hover);
+      transform: translateY(-2px);
+    }
+
+    .service-card[data-service="bridal"] .service-card__actions {
+      background: var(--service-bridal-overlay);
+    }
+
+    .service-card[data-service="bridal"].is-hovered .service-card__line,
+    .service-card[data-service="bridal"]:focus-within .service-card__line {
+      background: var(--service-bridal-accent);
+    }
+
+    .service-card[data-service="event"] .service-card__actions {
+      background: var(--service-event-overlay);
+    }
+
+    .service-card[data-service="event"].is-hovered .service-card__line,
+    .service-card[data-service="event"]:focus-within .service-card__line {
+      background: var(--service-event-accent);
+    }
+
+    .service-card[data-service="editorial"] .service-card__actions {
+      background: var(--service-editorial-overlay);
+    }
+
+    .service-card[data-service="editorial"].is-hovered .service-card__line,
+    .service-card[data-service="editorial"]:focus-within .service-card__line {
+      background: var(--service-editorial-accent);
+    }
+
+    .service-card[data-service="private"] .service-card__actions {
+      background: var(--service-private-overlay);
+    }
+
+    .service-card[data-service="private"].is-hovered .service-card__line,
+    .service-card[data-service="private"]:focus-within .service-card__line {
+      background: var(--service-private-accent);
     }
 
     .service-card__line {

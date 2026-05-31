@@ -53,6 +53,13 @@ const SERVICE_CONFIG = {
   },
 };
 
+const SERVICE_BUTTON_CLASS = {
+  bridal: 'btn--service-bridal',
+  event: 'btn--service-event',
+  editorial: 'btn--service-editorial',
+  private: 'btn--service-private',
+};
+
 const nav = document.getElementById('nav');
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
@@ -84,6 +91,18 @@ function renderServicePage(serviceKey) {
   document.getElementById('serviceType').value = serviceKey;
   document.getElementById('serviceName').value = config.title;
   document.getElementById('requirements').placeholder = config.requirementsPlaceholder;
+
+  const submitBtn = document.getElementById('serviceSubmitBtn');
+  if (submitBtn) {
+    submitBtn.classList.remove(
+      'btn--primary',
+      'btn--service-bridal',
+      'btn--service-event',
+      'btn--service-editorial',
+      'btn--service-private'
+    );
+    submitBtn.classList.add(SERVICE_BUTTON_CLASS[serviceKey] || 'btn--service-bridal');
+  }
 }
 
 if (navToggle && navLinks) {
