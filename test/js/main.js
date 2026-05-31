@@ -63,6 +63,34 @@ function initGalleryScroll() {
 
 initGalleryScroll();
 
+function initServiceCards() {
+  const cards = document.querySelectorAll('.service-card');
+
+  cards.forEach((card) => {
+    card.classList.add('visible');
+
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('is-hovered');
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('is-hovered');
+    });
+
+    card.addEventListener('focusin', () => {
+      card.classList.add('is-hovered');
+    });
+
+    card.addEventListener('focusout', (event) => {
+      if (!card.contains(event.relatedTarget)) {
+        card.classList.remove('is-hovered');
+      }
+    });
+  });
+}
+
+initServiceCards();
+
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(
   (entries) => {
